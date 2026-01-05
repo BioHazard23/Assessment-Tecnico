@@ -1,0 +1,412 @@
+.courses-container {
+    min-height: 100vh;
+    background: var(--parchment);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar - Horizontal slim bar */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    background: white;
+    border-bottom: 1px solid var(--bone);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+    letter-spacing: -0.25px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.admin-badge {
+    background: var(--dark-brown);
+    color: var(--linen);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.user-email {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 500;
+}
+
+.btn-logout {
+    background: transparent;
+    color: var(--danger);
+    border: none;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.btn-logout:hover {
+    opacity: 0.7;
+}
+
+/* Main Content Area */
+.controls {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem 2rem 1.5rem;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-input {
+    flex: 1;
+    max-width: 400px;
+    padding: 0.625rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    background: white;
+    color: var(--text-primary);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.search-input:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 0;
+}
+
+.search-input::placeholder {
+    color: var(--bone);
+}
+
+.status-filter {
+    padding: 0.625rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 0.875rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.btn-create {
+    background: var(--dark-brown);
+    color: white;
+    border: none;
+    padding: 0.625rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+    margin-left: auto;
+}
+
+.btn-create:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(61, 50, 41, 0.15);
+}
+
+/* Course Grid - Masonry-like layout */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    padding: 0 2rem 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Course Card - New Design */
+.course-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.course-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(61, 50, 41, 0.1);
+}
+
+.course-header {
+    padding: 1.25rem 1.25rem 0.75rem;
+    border-bottom: none;
+}
+
+.course-header h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+}
+
+.status-badge.draft {
+    background: var(--almond-cream);
+    color: var(--warm-brown);
+}
+
+.status-badge.published {
+    background: var(--success);
+    color: white;
+}
+
+.lesson-count {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    margin: 0;
+    padding: 0 1.25rem 1rem;
+}
+
+/* Course Actions - Horizontal bar at bottom */
+.course-actions {
+    display: flex;
+    border-top: 1px solid var(--linen);
+    margin-top: auto;
+}
+
+.course-actions button {
+    flex: 1;
+    padding: 0.75rem 0.5rem;
+    border: none;
+    border-right: 1px solid var(--linen);
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.15s;
+}
+
+.course-actions button:last-child {
+    border-right: none;
+}
+
+.course-actions button:hover {
+    background: var(--linen);
+    color: var(--text-primary);
+}
+
+.course-actions button.publish:hover {
+    background: #d4edda;
+    color: var(--success);
+}
+
+.course-actions button.unpublish:hover {
+    background: #fff3cd;
+    color: var(--warning);
+}
+
+.course-actions button.delete:hover {
+    background: #f8d7da;
+    color: var(--danger);
+}
+
+.course-actions button.hard-delete {
+    color: var(--danger);
+    font-weight: 600;
+}
+
+.course-actions button.hard-delete:hover {
+    background: var(--danger);
+    color: white;
+}
+
+/* Pagination - Centered pills */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem 3rem;
+}
+
+.pagination button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: white;
+    color: var(--text-primary);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: all 0.15s;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: var(--dark-brown);
+    color: white;
+}
+
+.pagination button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    padding: 0 0.5rem;
+}
+
+/* States */
+.loading,
+.empty-state {
+    text-align: center;
+    padding: 5rem 2rem;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.error-banner {
+    background: var(--danger);
+    color: white;
+    padding: 0.75rem 2rem;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Modal - Centered floating card */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(45, 42, 38, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+}
+
+.modal {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 24px 80px rgba(45, 42, 38, 0.3);
+    animation: modalSlide 0.2s ease;
+}
+
+@keyframes modalSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal h2 {
+    margin: 0 0 1.5rem 0;
+    color: var(--text-primary);
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.modal input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--bone);
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
+    color: var(--text-primary);
+    background: white;
+    transition: border-color 0.15s;
+}
+
+.modal input:focus {
+    outline: none;
+    border-color: var(--dark-brown);
+}
+
+.modal input::placeholder {
+    color: var(--bone);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+
+.modal-actions button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.15s;
+}
+
+.modal-actions button:first-child {
+    background: transparent;
+    border: 1px solid var(--bone);
+    color: var(--text-secondary);
+}
+
+.modal-actions button:first-child:hover {
+    background: var(--linen);
+}
+
+.modal-actions .btn-primary {
+    background: var(--dark-brown);
+    border: none;
+    color: white;
+}
+
+.modal-actions .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(61, 50, 41, 0.2);
+}

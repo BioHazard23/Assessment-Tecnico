@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Warm Elegant Palette */
+  --parchment: #edede9;
+  --bone: #d6ccc2;
+  --linen: #f5ebe0;
+  --almond-cream: #e3d5ca;
+  --almond-silk: #d5bdaf;
+
+  /* Extended Colors */
+  --dark-brown: #3d3229;
+  --warm-brown: #5c4f43;
+  --text-primary: #2d2a26;
+  --text-secondary: #5c5650;
+  --accent: #8b7355;
+  --accent-dark: #6b5a47;
+  --success: #4a7c59;
+  --warning: #b8860b;
+  --danger: #a04040;
+
+  font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: var(--parchment);
+  color: var(--text-primary);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+a {
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-dark);
+}
+
+::selection {
+  background: var(--almond-silk);
+  color: var(--dark-brown);
+}
