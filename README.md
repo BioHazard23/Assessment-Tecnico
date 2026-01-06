@@ -65,7 +65,7 @@ npm install
 # Iniciar modo desarrollo
 npm run dev
 ```
-La aplicación web abrirá en: [http://localhost:5175](http://localhost:5175)
+La aplicación web abrirá en: [http://localhost:5173](http://localhost:5173)
 
 ### Opción B: Docker Compose (Despliegue completo)
 
