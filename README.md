@@ -83,6 +83,11 @@ Esto levantará 3 servicios:
 
 > **Nota:** La configuración de puertos en Docker es diferente a la ejecución local para evitar conflictos.
 
+### Opción C: descargar el proyecto desde el repositorio de GitHub :)
+
+```bash
+# Link del repo: https://github.com/BioHazard23/Assessment-Tecnico.git 
+```
 ---
 
 ## 📡 Documentación de Endpoints
